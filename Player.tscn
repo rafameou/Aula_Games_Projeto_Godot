@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cx2sn5fwmkrtq"]
+[gd_scene load_steps=6 format=3 uid="uid://cx2sn5fwmkrtq"]
 
 [ext_resource type="Script" uid="uid://dh1lcj4257de4" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://cy40u8fygqerb" path="res://Weapon/ProjectileSpawner.tscn" id="2_kne1u"]
 [ext_resource type="Script" uid="uid://k2cmeplebbsm" path="res://ui_controller.gd" id="2_kpjcp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
@@ -11,6 +12,9 @@
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 script = ExtResource("1_xhfnw")
 body = NodePath("Body")
+
+[node name="Spawner" parent="." instance=ExtResource("2_kne1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.592266, 0.3586463, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0rwas")
